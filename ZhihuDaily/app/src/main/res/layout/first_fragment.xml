@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/first_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_paper"
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+            </android.support.v4.view.ViewPager>
+
+            <LinearLayout
+                android:id="@+id/first_news_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#eeeeee">
+
+            </LinearLayout>
+
+            <!--<android.support.v7.widget.RecyclerView
+                android:id="@+id/first_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eeeeee"/>-->
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>
