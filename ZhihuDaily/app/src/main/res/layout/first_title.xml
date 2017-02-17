@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/colorPrimary">
+
+    <Button
+        android:id="@+id/drawer_button"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_drawer"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="首页"
+        android:textSize="18sp"
+        android:textColor="#fff"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"/>
+
+    <Button
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/ic_notifications"
+        android:layout_marginRight="20dp"/>
+
+    <Button
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/ic_item"
+        android:layout_marginRight="10dp"/>
+
+</LinearLayout>
