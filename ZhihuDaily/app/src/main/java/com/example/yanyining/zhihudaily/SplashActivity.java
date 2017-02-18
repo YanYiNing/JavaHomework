@@ -34,7 +34,6 @@ import okhttp3.Response;
 public class SplashActivity extends AppCompatActivity {
 
     ImageView splashPicImg;
-    ImageView logoPicImg;
     private Handler handler;
 
     @Override
@@ -48,7 +47,6 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         splashPicImg = (ImageView) findViewById(R.id.splash__pic);
-        logoPicImg = (ImageView) findViewById(R.id.logo_pic);
         /*SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String splash = prefs.getString("splash_pic", null);
         if (splash != null) {
@@ -317,9 +315,7 @@ public class SplashActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        int logoId = R.drawable.logo;
                         Glide.with(SplashActivity.this).load(finalUrl).into(splashPicImg);
-                        Glide.with(SplashActivity.this).load(logoId).into(logoPicImg);
                     }
                 });
             }

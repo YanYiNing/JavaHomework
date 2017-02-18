@@ -6,7 +6,7 @@ import java.util.List;
  * Created by YanYiNing on 2017/2/17.
  */
 
-public class Aticle {
+public class Article {
 
     private String body;
     private String image_source;
