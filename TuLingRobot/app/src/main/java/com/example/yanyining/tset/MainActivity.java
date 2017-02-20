@@ -151,11 +151,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void initMgs() {
-        Msg msg1 = new Msg("Hello guy.", Msg.TYPE_RECEIVED);
-        Msg msg2 = new Msg("Hello.Who is that?", Msg.TYPE_SENT);
-        Msg msg3 = new Msg("This is Tom. Nice to talking to you.", Msg.TYPE_RECEIVED);
+        Msg msg1 = new Msg("你好，请问有什么可以帮您？", Msg.TYPE_RECEIVED);
         msgList.add(msg1);
-        msgList.add(msg2);
-        msgList.add(msg3);
     }
 }

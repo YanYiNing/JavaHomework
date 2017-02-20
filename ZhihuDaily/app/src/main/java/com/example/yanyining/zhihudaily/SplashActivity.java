@@ -70,7 +70,45 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     /**
-     * 请求到所有的JSON数据，转化成AllData对象，传给MainActivity
+     * 请求图片的URl地址，加载启动图像
+     */
+    private void loadSplashPic() {
+        final String request = "https://news-at.zhihu.com/api/7/prefetch-launch-images/1080*1668";
+        HttpUtil.sendOkHttpRequest(request, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                final String splash = response.body().string();
+                String url = null;
+                try {
+                    JSONObject jsonObject = new JSONObject(splash);
+                    JSONArray jsonArray = jsonObject.getJSONArray("creatives");
+                    String string = jsonArray.getJSONObject(0).toString();
+                    JSONObject jsonUrl = new JSONObject(string);
+                    url = jsonUrl.getString("url");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                /*SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(SplashActivity.this).edit();
+                editor.putString("splash_pic", url);
+                editor.apply();*/
+                final String finalUrl = url;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Glide.with(SplashActivity.this).load(finalUrl).into(splashPicImg);
+                    }
+                });
+            }
+        });
+    }
+
+    /**
+     * 试图请求到所有的JSON数据，转化成一个AllData对象，传给MainActivity，然而网络请求总是异常，找不到错误原因，放弃治疗...
      */
    /* private void initData() {
 
@@ -283,42 +321,4 @@ public class SplashActivity extends AppCompatActivity {
             }
         });
     }*/
-
-    /**
-     * 请求图片的URl地址，加载启动图像
-     */
-    private void loadSplashPic() {
-        final String request = "https://news-at.zhihu.com/api/7/prefetch-launch-images/1080*1668";
-        HttpUtil.sendOkHttpRequest(request, new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                final String splash = response.body().string();
-                String url = null;
-                try {
-                    JSONObject jsonObject = new JSONObject(splash);
-                    JSONArray jsonArray = jsonObject.getJSONArray("creatives");
-                    String string = jsonArray.getJSONObject(0).toString();
-                    JSONObject jsonUrl = new JSONObject(string);
-                    url = jsonUrl.getString("url");
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                /*SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(SplashActivity.this).edit();
-                editor.putString("splash_pic", url);
-                editor.apply();*/
-                final String finalUrl = url;
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Glide.with(SplashActivity.this).load(finalUrl).into(splashPicImg);
-                    }
-                });
-            }
-        });
-    }
 }

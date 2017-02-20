@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setItemTextColor(null);
         View view = navigationView.getHeaderView(0);
         final LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.first_news_item);
+
+        //由于首页的图标和menu的item项不在一起，所以当点击首页时候把menu的背景调无，点击menu列表项的时候吧首页图标的背景取消
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

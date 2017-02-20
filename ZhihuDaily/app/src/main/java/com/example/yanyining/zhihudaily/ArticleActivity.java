@@ -42,6 +42,9 @@ public class ArticleActivity extends AppCompatActivity {
     List<Article> articleList = new ArrayList<Article>();
     List<View> viewList;*/
 
+    /**
+     *直接用WebView来加载，放弃用ViewPager
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
