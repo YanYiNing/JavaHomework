@@ -1,8 +1,7 @@
 #红岩网校寒假作业
 ##1、图灵机器人
 采用了图灵机器人官方API，官方旧版改用GET方式的http://www.tuling123.com/openapi/api?key=xxx&info=xxx  <br>官方新版改用POST，请求格式为json。本程序采用了新版的POST写法。采用HttpURLConnecttion和JSONObject来请求和解析。效果如下：<br>
-![](https://github.com/YanYiNing/JavaHomework/blob/master/Picture/01.png)   ![](https://github.com/YanYiNing/JavaHomework/blob/master/Picture/02.png) <br>
-
+<img src="./Picture/01.png" width = "360" height = "640" alt="图片名称" align=center /> <img src="./Picture/02.png" width = "360" height = "640" alt="图片名称" align=center /> 
 ##2、知乎日报
 官方的启动界面图片获取API失效，重新抓取得到新的API：https://news-at.zhihu.com/api/7/prefetch-launch-images/1080*1668  <br>返回JSON格式如下： <br>
 >{<br>
@@ -18,7 +17,8 @@
    　　 }<br>
  　 ]<br>
 }
-<br>
+
+
 实现了：启动界面，主页，侧边栏，文章查看， 阅后变色。<br>
 未实现的功能：评论、收藏、本地缓存。<br>
 未解决的问题：<br>
@@ -27,5 +27,5 @@
 3. 文章内容曾采用过嵌套WebView的ViewPager来显示，由于采用了打开时请求所有内容加载过慢，去掉ViewPager无法左右滑动。<br>
 
 其他大多数都尽量得模仿原版，效果如下： <br>
-![](https://github.com/YanYiNing/JavaHomework/blob/master/Picture/03.png)  ![](https://github.com/YanYiNing/JavaHomework/blob/master/Picture/04.png)  <br>
-![](https://github.com/YanYiNing/JavaHomework/blob/master/Picture/05.png)  ![](https://github.com/YanYiNing/JavaHomework/blob/master/Picture/06.png)  <br>
+<img src="./Picture/03.png" width = "360" height = "640" alt="图片名称" align=center /> <img src="./Picture/04.png" width = "360" height = "640" alt="图片名称" align=center /> 
+<img src="./Picture/05.png" width = "360" height = "640" alt="图片名称" align=center /> <img src="./Picture/06.png" width = "360" height = "640" alt="图片名称" align=center /> 
